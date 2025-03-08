@@ -115,9 +115,18 @@ section {
 	display: flex;
 	justify-content: center;
 	text-align: center;
-	margin: auto;
-	height: 100vh;
 	align-items: center;
+	flex-wrap: wrap;
+	margin-top: 30vh;
+}
+
+.login-form-wrap h1 {
+	font-family: 'Freesentation-9Black';
+	font-size: 40px;
+	color: #fff;
+	width: 100vw;
+	padding-bottom: 15px;
+	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 #login-form {

@@ -1,10 +1,10 @@
-package com.project.smartfarm.admin.controller;
+package com.project.smartfarm.guest;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/admin")
-public class AdminController {
-	
+@RequestMapping("/guest")
+public class GuestController {
+
 }

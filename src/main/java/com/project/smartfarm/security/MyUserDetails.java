@@ -12,7 +12,6 @@ import com.project.smartfarm.cmmn.Const;
 import lombok.Getter;
 import lombok.ToString;
 
-@ToString
 @Getter
 public class MyUserDetails implements UserDetails {
     private String id;
