@@ -1,0 +1,77 @@
+nav {
+    width: 17%;
+    height: auto;
+    background: #fff;
+    border-right: 1px solid #dbdbdb;
+}
+
+nav ul li, nav li a {
+    color: #333;
+    font-size: 14px;
+}
+
+nav ul li {
+    margin-bottom: 15px;
+}
+
+.navbar-wrap {
+    padding: 20px 10px;
+}
+
+.main-plant {
+    display: flex;
+    align-items: center;
+}
+
+.main-plant > span {
+    margin-left: 5px;
+}
+
+.span-logout {
+	cursor: pointer;
+    width: 100%;
+    padding: 5px 0px;
+    color: red;
+    font-weight: bold;
+}
+
+.sub-plant {
+    padding: 15px 20px;
+    border-left: 7px solid transparent;
+}
+
+.sub-plant:hover {
+    background-color: #e6f5ff;
+    border-left: 7px solid #6da7f2;
+}
+
+.active {
+    background-color: #e6f5ff;
+    border-left: 7px solid #6da7f2;
+}
+
+/* 프로필 사진 */
+.profile-wrap {
+    padding: 20px 10px;
+    text-align: center;
+}
+
+.profile-wrap p {
+    color: #595b5c;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.profile-photo {
+    width: 100px;
+    height: 100px;
+    max-width: 100px;
+    max-height: 100px;
+    object-fit: cover;
+    border: 1px solid #dbdbdb;
+    border-radius: 50%;
+}
+
+.line {
+    border-bottom: 1px solid #dbdbdb;
+}

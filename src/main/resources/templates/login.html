@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{fragments/layout-login}" layout:fragment="body">
+<style>
+	body {
+		background: url('/img/img-background.jpg') no-repeat center center fixed;
+	    background-size: cover;
+	    margin: 0;
+	    height: 100vh;
+	}
+</style>
+
+<body>
+    <section>
+		<div class="login-form-wrap">
+			<form id="login-form">
+				<input type="text" id="id" name="id" placeholder="ID">
+				<input type="password" id="pwd" name="pwd" placeholder="PASSWORD">
+				<button type="button" onclick="login()">LOGIN</button>
+			</form>
+		</div>
+    </section>
+</body>
+
+<script>
+	let $form = $('#login-form');
+	let $id   = $('#id');
+	let $pwd   = $('#pwd');
+
+	$(document).on('keydown', function(e) {
+		if(e.key === 'Enter') {
+			login();
+		}
+	})
+
+	function login() {
+		if ($id.val() == '') { alert('아이디를 입력하세요.'); return; }
+		else if ($pwd.val() == '') { alert('패스워드를 입력하세요.'); return; }
+		else { $form.attr('method', 'post'); $form.submit(); }
+	}
+</script>
+</html>
