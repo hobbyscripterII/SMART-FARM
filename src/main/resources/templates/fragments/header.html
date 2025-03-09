@@ -1,11 +1,29 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security" th:fragment="header">
 	<header>
-	    <p>
-	        <a th:href="@{/}">
+	    <span>
+			<a sec:authorize="hasRole('ROLE_ROOT')" th:href="@{/root/home}">
 	            <span>🥬</span>
 	            <span>SMART FARM</span>
 	        </a>
-	    </p>
+			
+			<a sec:authorize="hasRole('ROLE_MANAGER')" th:href="@{/manager/home}">
+			    <span>🥬</span>
+			    <span>SMART FARM</span>
+			</a>
+			
+			<a sec:authorize="hasRole('ROLE_GUEST')" th:href="@{/guest/home}">
+			    <span>🥬</span>
+			    <span>SMART FARM</span>
+			</a>
+	    </span>
+		
+		<button class="btn small" onclick="logout()">로그아웃</button>
 	</header>
+	
+	<script>
+		function logout() {
+			location.href='/logout';
+		}
+	</script>
 </html>

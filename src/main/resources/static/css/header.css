@@ -9,6 +9,8 @@ header {
     width: 100%;
     border-bottom: 1px solid #dbdbdb;
     padding: 15px;
+    display: flex;
+    justify-content: space-between;
 }
 
 header span {

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security" th:fragment="nav-manager">
+	<nav>
+	    <!-- 프로필 사진 -->
+	    <div class="profile-wrap">
+	        <img class="profile-photo" th:src="@{/img/img-noprofile.png}">
+	        <p><span id="username" th:text="${#authentication.principal.name}"></span>님, 안녕하세요!</p>
+	    </div>
+
+	    <div class="line"></div>
+
+	    <ul class="navbar-wrap">
+	        <!-- 작물 목록 -->
+			<li class="main-plant"><img src="https://img.icons8.com/?size=20&id=88608&format=png"><span>작물 목록</span></li>
+			
+			<!-- 온습도 변화량 조회 -->
+			<li class="main-plant"><img src="https://img.icons8.com/?size=20&id=88608&format=png"><span>온습도 변화량 조회</span></li>
+			<li class="sub-plant"><a th:href="@{/manager/home}">변화 시점 기기 및 모듈 상태 조회</a></li>
+			<li class="sub-plant"><a th:href="@{/manager/home}">IP 카메라 이미지 조회</a></li>
+
+			<!-- 관수 시설 상태 변화량 조회 -->
+			<li class="main-plant"><img src="https://img.icons8.com/?size=20&id=88608&format=png"><span>관수 시설 상태 변화량 조회</span></li>
+			<li class="sub-plant"><a th:href="@{/manager/home}">물탱크 수위계 조회</a></li>
+			<li class="sub-plant"><a th:href="@{/manager/home}">관수량 측정계 조회</a></li>
+
+			<!-- 시간별 변화량 조회 -->
+			<li class="main-plant"><img src="https://img.icons8.com/?size=20&id=88608&format=png"><span>시간별 변화량 조회</span></li>
+			<li class="sub-plant"><a th:href="@{/manager/home}">개폐량 조회</a></li>
+			<li class="sub-plant"><a th:href="@{/manager/home}">일조량 조회</a></li>
+
+			<!-- 양액용 모듈 관리 -->
+			<li class="main-plant"><img src="https://img.icons8.com/?size=20&id=88608&format=png"><span>양액용 모듈 관리</span></li>
+			<li class="sub-plant"><a th:href="@{/manager/home}">양액 투입량 관리</a></li>
+			<li class="sub-plant"><a th:href="@{/manager/home}">양액 종류 관리</a></li>
+
+			<!-- 작물 관리 -->
+			<li class="main-plant"><img src="https://img.icons8.com/?size=20&id=88608&format=png"><span>작물 관리</span></li>
+			<li class="sub-plant"><a th:href="@{/manager/home}">작물 성장상태 조회</a></li>
+			<li class="sub-plant"><a th:href="@{/manager/home}">작물 정보 관리</a></li>
+	    </ul>
+	</nav>
+</html>

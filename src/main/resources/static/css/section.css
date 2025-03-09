@@ -111,7 +111,7 @@ section {
 }
 
 /* 로그인 */
-.login-form-wrap {
+.login-form-wrap, .exception-form-wrap {
 	display: flex;
 	justify-content: center;
 	text-align: center;
@@ -173,4 +173,13 @@ section {
 #login-form button:hover {
 	background-color: #28a745;
     transition: background 0.3s ease, transform 0.1s ease;
+}
+
+/* 예외 페이지 */
+.exception-form-wrap h1 {
+	font-family: 'Freesentation-9Black';
+	font-size: 40px;
+	color: #333;
+	width: 100vw;
+	padding-bottom: 15px;
 }

@@ -7,9 +7,13 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 
 import jakarta.servlet.http.HttpSession;
+import lombok.RequiredArgsConstructor;
 
 @Configuration
+@RequiredArgsConstructor
 public class SecurityConfig {
+	private final MySuccessHandler mySuccessHandler;
+	
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity httpSecurity) throws Exception {
         httpSecurity
@@ -20,16 +24,16 @@ public class SecurityConfig {
                         .usernameParameter("id")
                         .passwordParameter("pwd")
                         .failureUrl("/login?error")
-                        .defaultSuccessUrl("/")
+                        .successHandler(mySuccessHandler)
                         .permitAll())
                 .exceptionHandling(e -> e
                         .accessDeniedPage("/access-denied"))
                 .authorizeHttpRequests(a -> a
-                		// 정적 리소스 접근 가능
-                		.requestMatchers("/css/**", "/js/**", "/img/**", "/favicon.ico").permitAll()
+                		// 정적 리소스 및 예외 페이지
+                		.requestMatchers("/css/**", "/js/**", "/img/**", "/favicon.ico", "/access-denied").permitAll()
                         // 미로그인 시 로그인 화면으로 리다이렉트
                 		.requestMatchers("/").authenticated()
-                        .requestMatchers("/admin/**").hasRole("ROOT")
+                        .requestMatchers("/root/**").hasRole("ROOT")
                         .requestMatchers("/manager/**").hasAnyRole("MANAGER", "ROOT")
                         .requestMatchers("/guest/**").hasAnyRole("GUEST", "MANAGER", "ROOT")
                 );

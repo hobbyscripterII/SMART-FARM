@@ -10,7 +10,6 @@ import org.springframework.security.core.userdetails.UserDetails;
 import com.project.smartfarm.cmmn.Const;
 
 import lombok.Getter;
-import lombok.ToString;
 
 @Getter
 public class MyUserDetails implements UserDetails {

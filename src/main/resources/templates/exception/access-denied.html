@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{fragments/layout-exception}" layout:fragment="body">
+<style>
+	section {
+		flex: auto;
+		min-width: 0;
+	    min-height: 80vh;
+	}
+</style>
+<body>
+    <section>
+		<div class="exception-form-wrap">
+			<h1>접근 권한이 없습니다.</h1>
+			<button class="btn" onclick="window.history.back();">이전 페이지로 돌아가기</button>
+		</div>
+    </section>
+</body>
+</html>
