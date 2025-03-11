@@ -9,7 +9,7 @@ function getCurrentDate() {
     let seconds = currentDate.getSeconds().toString().padStart(2, '0');
 
     let resultDate = `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
-
+	// console.log('resultDate = ', resultDate);
     $('#time').html(resultDate);
 }
 
@@ -47,14 +47,6 @@ $(document).ready(() => {
     const profileImg = userData.profileImg;
     const plantList = userData.plantList;
     const role = userData.role;
-
-    // 프로필 표출
-    // const profilePhotoEl = $('.profile-photo');
-    // profilePhotoEl.attr('src', profileImg);
-
-	// 이름 표출
-    // const userNameEl = $('#username');
-    // userNameEl.text(userName);
 
     // nav 세팅
     // 작물 목록 표출
@@ -107,6 +99,9 @@ $(document).ready(() => {
     // 첫 화면에 보여줄 센서 데이터 및 차트
     const defaultPlant = plantList[0]; // 첫번째 작물
     chagePlant(defaultPlant);
+	
+	// const regionCds = "[[${#authentication.principal.regionCds}]]";
+	// console.log('regionCds = ', regionCds);
 });
 
 function getUserDummyData(user) {

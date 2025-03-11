@@ -2,9 +2,6 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{fragments/layout-manager}" layout:fragment="body">
 	<body>
 	    <section>
-			<h1>MANAGER</h1>
-			
-			<!--
 	        <div id="weather-wrap">
 	            <p id="time"></p>
 
@@ -35,7 +32,10 @@
 	                </div>
 	            </figure>
 	        </div>
-			-->
 	    </section>
 	</body>
+	
+	<script th:inline="javascript">
+	    const apiUrl = /*[[${apiUrl}]]*/ '';
+	</script>
 </html>

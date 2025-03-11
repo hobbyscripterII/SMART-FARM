@@ -17,9 +17,9 @@ section {
 }
 
 .sensor-data div {
+	box-sizing: border-box;
     border: 1px solid #dbdbdb;
-    min-width: 180px;
-    /* margin: 25px; */
+    width: 200px;
     cursor: pointer;
     padding: 25px;
     border-radius: 5%;
@@ -76,12 +76,6 @@ section {
 
 .search-date-wrap span {
     margin-right: 10px;
-}
-
-#search-date {
-    padding: 12px 14px;
-    border: 1px solid #dbdbdb;
-    border-radius: 5px;
 }
 
 /* 툴바 */

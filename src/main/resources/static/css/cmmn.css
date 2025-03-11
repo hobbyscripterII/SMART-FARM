@@ -20,6 +20,12 @@ a {
     text-decoration: none;
 }
 
+select {
+    padding: 8px 14px;
+    border: 1px solid #dbdbdb;
+    border-radius: 5px;
+}
+
 .btn {
 	box-sizing: border-box;
     background: #dbdbdb;

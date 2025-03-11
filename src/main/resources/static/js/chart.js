@@ -1,10 +1,24 @@
 function chagePlant(plant) {
     plant = plant.trim();
-
+	
     // 센서 데이터 초기화
     const sensorDataEl = $('.sensor-data');
     sensorDataEl.html('');
 
+	const dto = {"date" : getCurrentDate(), "regionCode" : "2717055000"};
+	
+	$.ajax({
+	    type: 'GET',
+	    url: window.apiUrl + '/weather',
+	    data: dto,
+	    dataType: 'json',
+	    contentType: 'application/json',
+	    success: (data) => {
+			// console.log('data = ', data);
+	    },
+	    error: (x) => { console.log(x); }
+	})
+	
     const sensorDataInfo = getSensorDataInfo(plant);
     const sensorList = {
         'temp' : {name: '온도', unit: '°C'},
@@ -300,4 +314,16 @@ function getSensorDataInfo(plant) {
     }
 
     return sensorData;
+}
+
+function getCurrentDate() {
+    let currentDate = new Date();
+
+    let year = currentDate.getFullYear();
+    let month = (currentDate.getMonth() + 1).toString().padStart(2, '0');
+    let day = currentDate.getDate().toString().padStart(2, '0');
+
+    let resultDate = `${year}-${month}-${day}`;
+
+	return resultDate;
 }

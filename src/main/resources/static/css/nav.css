@@ -1,5 +1,5 @@
 nav {
-    width: 17%;
+    /* width: 17%; */
     height: auto;
     background: #fff;
     border-right: 1px solid #dbdbdb;
@@ -74,4 +74,10 @@ nav ul li {
 
 .line {
     border-bottom: 1px solid #dbdbdb;
+}
+
+/* 작물 목록 */
+#plant-list {
+	width: 100%;
+    margin-bottom: 17px;
 }
