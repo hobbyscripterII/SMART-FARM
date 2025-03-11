@@ -19,7 +19,7 @@ public class MyUserDetails implements UserDetails {
     private String pwd;
     private String authorization;
     private String name;
-    private String regionCds;
+    private String regionCodes;
     
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
@@ -35,5 +35,5 @@ public class MyUserDetails implements UserDetails {
     @Override public boolean isCredentialsNonExpired() {return true;}
     @Override public boolean isEnabled() {return true;}
     public String getName() {return name;}
-    public String getRegionCds() {return regionCds;}
+    public String getRegionCodes() {return regionCodes;}
 }

@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security" th:fragment="nav-manager">
 	<nav>
 		<input type="hidden" id="api-url" th:value="${@environment.getProperty('api.url')}" />
-		<input type="hidden" id="region-cds" th:value="${#authentication.principal.regionCds}" />
+		<input type="hidden" id="region-cds" th:value="${#authentication.principal.regionCodes}" />
 	    
 		<!-- 프로필 사진 -->
 	    <div class="profile-wrap">
@@ -44,8 +44,4 @@
 			<li class="sub-plant"><a th:href="@{/manager/home}">작물 정보 관리</a></li>
 	    </ul>
 	</nav>
-	
-	<script>
-		alert('TEST');
-	</script>
 </html>

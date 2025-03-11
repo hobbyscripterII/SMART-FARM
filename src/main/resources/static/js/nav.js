@@ -42,7 +42,7 @@ function defaultSettings(regionCode) {
 	    dataType: 'json',
 	    contentType: 'application/json',
 	    success: (data) => {
-			console.log('data = ', data);
+			// console.log('data = ', data);
 	    },
 	    error: (x) => { console.log(x); }
 	})

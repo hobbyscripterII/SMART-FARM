@@ -7,9 +7,8 @@ function getCurrentDate() {
     let hours = currentDate.getHours().toString().padStart(2, '0');
     let minutes = currentDate.getMinutes().toString().padStart(2, '0');
     let seconds = currentDate.getSeconds().toString().padStart(2, '0');
-
     let resultDate = `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
-	// console.log('resultDate = ', resultDate);
+
     $('#time').html(resultDate);
 }
 
