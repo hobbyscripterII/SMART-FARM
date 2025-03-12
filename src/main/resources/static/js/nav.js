@@ -52,14 +52,73 @@ function defaultSettings(regionCode) {
 	    contentType: 'application/json',
 	    success: (data) => {
 			const result = data.data;
-			const sensorDefaultList = getSensorDefaultList();
-			
-			// console.log('sensorDefaultList = ', sensorDefaultList);
+			// const sensorDefaultList = getSensorDefaultList();
+			let datasets = null;
+			const statusArr = [];
+			const temperatureArr = [];
+			const windPwrArr = [];
+			const windDirectionArr = [];
+			const updateDttmArr = [];
+			const humidityArr = [];
 			
 			$.each(result, function(idx, item) {
-				// console.log('item = ', item);
+				const status = item.status;
+				const temperature = item.temperature;
+				const windPwr = item.windPwr;
+				const windDirection = item.windDirection;
+				const updateDttm = item.updateDttm;
+				const humidity = item.humidity;
 				
+				statusArr.push(status);
+				temperatureArr.push(temperature);
+				windPwrArr.push(windPwr);
+				windDirectionArr.push(windDirection);
+				updateDttmArr.push(updateDttm);
+				humidityArr.push(humidity);
 			});
+			
+			datasets = `
+				[
+					{
+						"name": "상태",
+						"data": ${statusArr},
+						"unit": "",
+						"type": "line",
+						"valueDecimals": 1
+					},
+					{
+						"name": "온도",
+						"data": ${temperatureArr},
+						"unit": "°C",
+						"type": "line",
+						"valueDecimals": 1
+					},
+					{
+						"name": "풍속",
+						"data": ${windPwrArr},
+						"unit": "m/s",
+						"type": "line",
+						"valueDecimals": 1
+					},
+					{
+						"name": "풍향",
+						"data": ${windDirectionArr},
+						"unit": "",
+						"type": "line",
+						"valueDecimals": 1
+					},
+					{
+						"name": "습도",
+						"data": ${humidityArr},
+						"unit": "%",
+						"type": "line",
+						"valueDecimals": 1
+					}
+				]
+			`;
+			
+			// console.log('datasets = ', datasets);
+			
 	    },
 	    error: (x) => { console.log(x); }
 	})
