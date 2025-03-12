@@ -14,34 +14,34 @@
 
 	    <ul class="navbar-wrap">
 	        <!-- 작물 목록 -->
-			<li class="main-plant"><img src="https://img.icons8.com/?size=20&id=88608&format=png"><span>작물 목록</span></li>
-			<select id="plant-list" onchange="defaultSettings(this.value)">
+			<li class="main-nav"><img src="https://img.icons8.com/?size=20&id=88608&format=png"><span>하우스 목록</span></li>
+			<select id="house-list" onchange="defaultSettings(this.value)">
 			</select>
 			
 			<!-- 온습도 변화량 조회 -->
-			<li class="main-plant"><img src="https://img.icons8.com/?size=20&id=88608&format=png"><span>온습도 변화량 조회</span></li>
-			<li class="sub-plant"><a th:href="@{/manager/home}">변화 시점 기기 및 모듈 상태 조회</a></li>
-			<li class="sub-plant"><a th:href="@{/manager/home}">IP 카메라 이미지 조회</a></li>
+			<li class="main-nav"><img src="https://img.icons8.com/?size=20&id=88608&format=png"><span>온습도 변화량 조회</span></li>
+			<li class="sub-nav"><a th:href="@{/manager/device}">변화 시점 기기 및 모듈 상태 조회</a></li>
+			<li class="sub-nav"><a th:href="@{/manager/camera}">IP 카메라 이미지 조회</a></li>
 
 			<!-- 관수 시설 상태 변화량 조회 -->
-			<li class="main-plant"><img src="https://img.icons8.com/?size=20&id=88608&format=png"><span>관수 시설 상태 변화량 조회</span></li>
-			<li class="sub-plant"><a th:href="@{/manager/home}">물탱크 수위계 조회</a></li>
-			<li class="sub-plant"><a th:href="@{/manager/home}">관수량 측정계 조회</a></li>
+			<li class="main-nav"><img src="https://img.icons8.com/?size=20&id=88608&format=png"><span>관수 시설 상태 변화량 조회</span></li>
+			<li class="sub-nav"><a th:href="@{/manager/water_tank}">물탱크 수위계 조회</a></li>
+			<li class="sub-nav"><a th:href="@{/manager/irrigation}">관수량 측정계 조회</a></li>
 
 			<!-- 시간별 변화량 조회 -->
-			<li class="main-plant"><img src="https://img.icons8.com/?size=20&id=88608&format=png"><span>시간별 변화량 조회</span></li>
-			<li class="sub-plant"><a th:href="@{/manager/home}">개폐량 조회</a></li>
-			<li class="sub-plant"><a th:href="@{/manager/home}">일조량 조회</a></li>
+			<li class="main-nav"><img src="https://img.icons8.com/?size=20&id=88608&format=png"><span>시간별 변화량 조회</span></li>
+			<li class="sub-nav"><a th:href="@{/manager/open_close}">개폐량 조회</a></li>
+			<li class="sub-nav"><a th:href="@{/manager/solor}">일조량 조회</a></li>
 
 			<!-- 양액용 모듈 관리 -->
-			<li class="main-plant"><img src="https://img.icons8.com/?size=20&id=88608&format=png"><span>양액용 모듈 관리</span></li>
-			<li class="sub-plant"><a th:href="@{/manager/home}">양액 투입량 관리</a></li>
-			<li class="sub-plant"><a th:href="@{/manager/home}">양액 종류 관리</a></li>
+			<li class="main-nav"><img src="https://img.icons8.com/?size=20&id=88608&format=png"><span>양액용 모듈 관리</span></li>
+			<li class="sub-nav"><a th:href="@{/manager/nutrient_injection}">양액 투입량 관리</a></li>
+			<li class="sub-nav"><a th:href="@{/manager/nutrient_type}">양액 종류 관리</a></li>
 
 			<!-- 작물 관리 -->
-			<li class="main-plant"><img src="https://img.icons8.com/?size=20&id=88608&format=png"><span>작물 관리</span></li>
-			<li class="sub-plant"><a th:href="@{/manager/home}">작물 성장상태 조회</a></li>
-			<li class="sub-plant"><a th:href="@{/manager/home}">작물 정보 관리</a></li>
+			<li class="main-nav"><img src="https://img.icons8.com/?size=20&id=88608&format=png"><span>작물 관리</span></li>
+			<li class="sub-nav"><a th:href="@{/manager/plant_status}">작물 성장 상태 조회</a></li>
+			<li class="sub-nav"><a th:href="@{/manager/plant_info}">작물 정보 관리</a></li>
 	    </ul>
 	</nav>
 </html>

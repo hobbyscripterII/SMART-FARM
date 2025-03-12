@@ -1,21 +1,10 @@
-function getCurrentDate() {
-    let currentDate = new Date();
-
-    let year = currentDate.getFullYear();
-    let month = (currentDate.getMonth() + 1).toString().padStart(2, '0');
-    let day = currentDate.getDate().toString().padStart(2, '0');
-    let hours = currentDate.getHours().toString().padStart(2, '0');
-    let minutes = currentDate.getMinutes().toString().padStart(2, '0');
-    let seconds = currentDate.getSeconds().toString().padStart(2, '0');
-    let resultDate = `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
-
-    $('#time').html(resultDate);
-}
-
 $(document).ready(() => {
+	// API URL
+	window.apiUrl = $('#api-url').val();
+	
     // 현재 시간 표출
-    getCurrentDate();
-    setInterval(getCurrentDate, 1000);
+    yyyyMMddhhmmss();
+    setInterval(yyyyMMddhhmmss, 1000);
 
     // ajax 호출
 
@@ -97,11 +86,35 @@ $(document).ready(() => {
 
     // 첫 화면에 보여줄 센서 데이터 및 차트
     const defaultPlant = plantList[0]; // 첫번째 작물
-    chagePlant(defaultPlant);
+    // chagePlant(defaultPlant);
 	
 	// const regionCds = "[[${#authentication.principal.regionCds}]]";
 	// console.log('regionCds = ', regionCds);
 });
+
+function yyyyMMdd() {
+    let currentDate = new Date();
+    let year = currentDate.getFullYear();
+    let month = (currentDate.getMonth() + 1).toString().padStart(2, '0');
+    let day = currentDate.getDate().toString().padStart(2, '0');
+    let resultDate = `${year}-${month}-${day}`;
+
+	return resultDate;
+}
+
+function yyyyMMddhhmmss() {
+    let currentDate = new Date();
+
+    let year = currentDate.getFullYear();
+    let month = (currentDate.getMonth() + 1).toString().padStart(2, '0');
+    let day = currentDate.getDate().toString().padStart(2, '0');
+    let hours = currentDate.getHours().toString().padStart(2, '0');
+    let minutes = currentDate.getMinutes().toString().padStart(2, '0');
+    let seconds = currentDate.getSeconds().toString().padStart(2, '0');
+    let resultDate = `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
+
+    $('#time').html(resultDate);
+}
 
 function getUserDummyData(user) {
     let userData = {};

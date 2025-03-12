@@ -78,8 +78,8 @@ section {
     margin-right: 10px;
 }
 
-/* 툴바 */
-#weather-wrap {
+/* 툴바 및 메뉴 표출 */
+#weather-wrap, #menu-wrap {
     width: 100%;
     height: 70px;
     background-color: #f8f9fa;
@@ -89,8 +89,8 @@ section {
     align-items: center;
 }
 
-/* 현재 시간 */
-#time {
+/* 현재 시간 및 메뉴 표출 */
+#time, #menu-name {
     font-family: 'Freesentation-9Black';
     font-size: 25px;
 }

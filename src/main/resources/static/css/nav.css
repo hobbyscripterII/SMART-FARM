@@ -18,12 +18,12 @@ nav ul li {
     padding: 20px 10px;
 }
 
-.main-plant {
+.main-nav {
     display: flex;
     align-items: center;
 }
 
-.main-plant > span {
+.main-nav > span {
     margin-left: 5px;
 }
 
@@ -35,12 +35,13 @@ nav ul li {
     font-weight: bold;
 }
 
-.sub-plant {
+.sub-nav {
     padding: 15px 20px;
     border-left: 7px solid transparent;
+	cursor: pointer;
 }
 
-.sub-plant:hover {
+.sub-nav:hover {
     background-color: #e6f5ff;
     border-left: 7px solid #6da7f2;
 }
@@ -76,8 +77,8 @@ nav ul li {
     border-bottom: 1px solid #dbdbdb;
 }
 
-/* 작물 목록 */
-#plant-list {
+/* 하우스 목록 */
+#house-list {
 	width: 100%;
     margin-bottom: 17px;
 }

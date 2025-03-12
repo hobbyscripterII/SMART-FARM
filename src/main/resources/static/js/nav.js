@@ -1,5 +1,10 @@
 $(document).ready(function() {
-	window.apiUrl = $('#api-url').val();
+	// 클릭 메뉴 강조 효과
+	changeNavActive();
+	
+	// sub-nav 클릭 시 a 태그 트리거
+	subNavClickEvent();
+	
 	const regionCodes = $('#region-cds').val() || '';
 	const dto = {"regionCodes" : regionCodes};
 	
@@ -13,7 +18,7 @@ $(document).ready(function() {
 		    contentType: 'application/json',
 		    success: (data) => {
 				const result = data.data;
-				const plantListEl = $('#plant-list');
+				const houseListEl = $('#house-list');
 				const firstRegionCd = result[0].regionCd;
 				
 				$.each(result, function(idx, item) {
@@ -21,7 +26,7 @@ $(document).ready(function() {
 					const regionName = item.regionName;
 					const optionEl = `<option value=${regionCd}>${regionName}</option>`;
 					
-					plantListEl.append(optionEl);
+					houseListEl.append(optionEl);
 				});
 				
 				// 기본 정보 세팅
@@ -33,7 +38,11 @@ $(document).ready(function() {
 });
 
 function defaultSettings(regionCode) {
-	const dto = {"date" : getCurrentDate(), "regionCode" : regionCode};
+	const dto = {"date" : yyyyMMdd(), "regionCode" : regionCode};
+	
+	// 센서 데이터 초기화
+	const sensorDataEl = $('.sensor-data');
+	sensorDataEl.html('');
 	
 	$.ajax({
 	    type: 'GET',
@@ -42,20 +51,53 @@ function defaultSettings(regionCode) {
 	    dataType: 'json',
 	    contentType: 'application/json',
 	    success: (data) => {
-			// console.log('data = ', data);
+			const result = data.data;
+			const sensorDefaultList = getSensorDefaultList();
+			
+			// console.log('sensorDefaultList = ', sensorDefaultList);
+			
+			$.each(result, function(idx, item) {
+				// console.log('item = ', item);
+				
+			});
 	    },
 	    error: (x) => { console.log(x); }
 	})
 }
 
-function getCurrentDate() {
-    let currentDate = new Date();
+function getChartDataInfo(type) {
+	let chartInfoClass = {};
+}
 
-    let year = currentDate.getFullYear();
-    let month = (currentDate.getMonth() + 1).toString().padStart(2, '0');
-    let day = currentDate.getDate().toString().padStart(2, '0');
+function subNavClickEvent() {
+	$(document).on('click', '.sub-nav', function() {
+		window.location = $(this).find('a').attr('href');
+	})
+}
 
-    let resultDate = `${year}-${month}-${day}`;
+function changeNavActive() {
+	const currentPath = window.location.pathname;
+    const subPlantEl = $('.sub-nav');
+	
+    subPlantEl.each((idx, el) => {
+		const elHref = $(el).find('a').attr('href');
 
-	return resultDate;
+        // 기존 active 효과 제거
+        $(el).removeClass('active');
+		
+        if(currentPath == elHref) {
+            $(el).addClass('active');
+        }
+    });
+}
+
+function getSensorDefaultList() {
+	const sensorList = {
+	    'temp' : {name: '온도' , unit: '°C'},
+	    'humi' : {name: '습도' , unit: '%' },
+	    'open' : {name: '개폐량', unit: '%' },
+	    'light': {name: '일조량', unit: 'LX'}
+	};
+	
+	return sensorList;
 }
