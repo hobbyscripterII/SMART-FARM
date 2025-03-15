@@ -1,10 +1,3 @@
-$(document).ready(function() {
-	const regionCode = ($('#house-list').find(':selected').val()).trim();
-	
-	getChart(regionCode);
-	getSensor();
-});
-
 function getChart(regionCode) {
 	const dto   = {"date" : yyyyMMdd(), "regionCode" : regionCode};
 	const title = ($('#house-list').find(':selected').text()).trim();
@@ -22,21 +15,21 @@ function getChart(regionCode) {
 	    success: (data) => {
 			const result = data.data;
 			
-			let datasets = null;
-			const statusArr = [];
-			const temperatureArr = [];
-			const windPwrArr = [];
+			let datasets           = null;
+			const statusArr        = [];
+			const temperatureArr   = [];
+			const windPwrArr       = [];
 			const windDirectionArr = [];
-			const updateDttmArr = [];
-			const humidityArr = [];
+			const updateDttmArr    = [];
+			const humidityArr      = [];
 			
 			$.each(result, function(idx, item) {
-				const status = item.status;
-				const temperature = item.temperature;
-				const windPwr = item.windPwr;
+				const status        = item.status;
+				const temperature   = item.temperature;
+				const windPwr       = item.windPwr;
 				const windDirection = item.windDirection;
-				const updateDttm = item.updateDttm;
-				const humidity = item.humidity;
+				const updateDttm    = item.updateDttm;
+				const humidity      = item.humidity;
 				
 				statusArr.push(status);
 				temperatureArr.push(temperature);

@@ -17,7 +17,7 @@ $(document).ready(function() {
 	}
 
 	const regionCodes = $('#region-cds').val() || '';
-	const dto = {"regionCodes" : regionCodes};
+	const dto 		  = {"regionCodes" : regionCodes};
 	
 	if(regionCodes != '') {
 		$.ajax({
@@ -28,7 +28,7 @@ $(document).ready(function() {
 		    contentType: 'application/json',
 		    success: (data) => {
 				const result = data.data;
-				
+
 				$.each(result, function(idx, item) {
 					const regionCode = item.regionCd;
 					const regionName = item.regionName.replaceAll('_', ' ');
@@ -36,6 +36,17 @@ $(document).ready(function() {
 					
 					houseListEl.append(optionEl);
 				});
+				
+				regionCode = result[0].regionCd;
+				
+				const currentUrl = window.location.pathname;
+				const targetUrl  = '/manager/home';
+
+				// 차트 표출하는 페이지에 있을 경우에만 차트 정보 변경 이벤트 실행
+				if(currentUrl == targetUrl) {
+					getChart(regionCode);
+					getSensor();
+				}
 		    },
 		    error: (x) => {
 				console.log(x);
