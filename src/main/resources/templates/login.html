@@ -35,9 +35,16 @@
 	})
 
 	function login() {
-		if ($id.val() == '') { alert('아이디를 입력하세요.'); return; }
-		else if ($pwd.val() == '') { alert('패스워드를 입력하세요.'); return; }
-		else { $form.attr('method', 'post'); $form.submit(); }
+		if ($id.val() == '') {
+			sweetAlert('알림', '아이디를 입력하세요.', 'error');
+			return;
+		} else if ($pwd.val() == '') {
+			sweetAlert('알림', '패스워드를 입력하세요.', 'error');
+			return;
+		} else {
+			$form.attr('method', 'post');
+			$form.submit();
+		}
 	}
 </script>
 </html>
