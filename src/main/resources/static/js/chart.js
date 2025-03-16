@@ -13,8 +13,7 @@ function getChart(regionCode) {
 	    dataType: 'json',
 	    contentType: 'application/json',
 	    success: (data) => {
-			const result = data.data;
-			
+			const result 		   = data.data;
 			let datasets           = null;
 			const statusArr        = [];
 			const temperatureArr   = [];
@@ -86,7 +85,7 @@ function getChart(regionCode) {
 			
 			Highcharts.chart('container', {
 			  chart: {
-			    type: 'line'
+			    type: 'spline'
 			  },
 			  title: {
 			    text: title
@@ -95,6 +94,8 @@ function getChart(regionCode) {
 			    categories: datasets.xData
 			  },
 			  yAxis: {
+				min: -10,
+				max: 10,
 			    title: {
 			      text: '°C'
 			    }
@@ -107,6 +108,7 @@ function getChart(regionCode) {
 					  
 			          return `
 			              <b>${datasets.xData[index]}</b><br>
+			              상태: ${datasets.datasets[0].data[index]}<br>
 			              온도: ${datasets.datasets[1].data[index]}°C<br>
 			              습도: ${datasets.datasets[4].data[index]}%<br>
 			              풍속: ${datasets.datasets[2].data[index]}m/s<br>
@@ -115,7 +117,7 @@ function getChart(regionCode) {
 			      }
 			  },
 			  plotOptions: {
-			    line: {
+			    spline: {
 			      dataLabels: {
 					enabled: true
 				},
@@ -125,7 +127,9 @@ function getChart(regionCode) {
 			  series: [
 				{
 				    name: '온도',
-				    data: datasets.datasets[1].data.map(value => Number(value)),
+				    data: datasets.datasets[1].data.map(value =>
+						(value === null) ? null : Number(value)
+					),
 				    tooltip: {
 						valueSuffix: datasets.datasets[1].unit
 					}
