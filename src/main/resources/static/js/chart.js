@@ -4,15 +4,14 @@ function getChart(regionCode) {
 	regionCode  		 = regionCode == '' ? regionCodeTemp : regionCode;
 	const dto   		 = {"date" : yyyyMMdd(), "regionCode" : regionCode, "timeInterval" : timeInterval};
 	const title 		 = ($('#house-list').find(':selected').text()).trim();
-	
-	console.log('dto = ', dto);
+	let timeIntervalText = timeInterval == 'DAY' ? '시간' : timeInterval == 'MONTH' ? '일자' : '년도';	
 	
 	$.ajax({
-	    type: 'GET',
-	    url: window.apiUrl + '/weather',
-	    data: dto,
-	    dataType: 'json',
-	    contentType: 'application/json',
+	    type	    : 'GET',
+	    url		    : window.apiUrl + '/weather',
+	    data	    : dto,
+	    dataType    : 'json',
+	    contentType : 'application/json',
 	    success: (data) => {
 			const result 		   = data.data;
 			let datasets           = null;
@@ -102,42 +101,45 @@ function getChart(regionCode) {
 			    }
 			  },
 			  tooltip: {
-			      shared: true,
-			      useHTML: true,
-				  backgroundColor: 'white',
-				  borderColor: '#ccc',
-				  outside: true,
-				  style: {
-				      padding    : '10px',
-				      color      : '#333',
-				      fontSize   : '12px',
-				      fontWeight : 'bold',
-				      boxShadow  : '0px 4px 6px rgba(0, 0, 0, 0.1)'
-				  },
+			      shared		  : true,
+			      useHTML		  : true,
+				  backgroundColor : 'white',
+				  borderColor	  : '#ccc',
+				  outside		  : true,
+				  style			  : {
+								         padding    : '10px',
+								         color      : '#333',
+								         fontSize   : '12px',
+								         fontWeight : 'bold',
+								         boxShadow  : '0px 4px 6px rgba(0, 0, 0, 0.1)'
+								     },
 			      formatter: function () {
 			          let index = this.points[0].point.index;
 					  
 			          return `
-			              시간: ${datasets.xData[index]}<br>
-			              상태: ${datasets.datasets[0].data[index]}<br>
-			              온도: ${datasets.datasets[1].data[index]}°C<br>
-			              습도: ${datasets.datasets[4].data[index]}%<br>
-			              풍속: ${datasets.datasets[2].data[index]}m/s<br>
-			              풍향: ${datasets.datasets[3].data[index]}
-			          `;
+								  ${timeIntervalText}: ${datasets.xData[index]}<br>
+								  상태: ${datasets.datasets[0].data[index]}<br>
+								  온도: ${datasets.datasets[1].data[index]}°C<br>
+								  습도: ${datasets.datasets[4].data[index]}%<br>
+								  풍속: ${datasets.datasets[2].data[index]}m/s<br>
+								  풍향: ${datasets.datasets[3].data[index]}
+					         `;
 			      }
 			  },
 			  plotOptions: {
 			    spline: {
-			      dataLabels: {
-			        enabled: true,
-			        useHTML: true,
-			        formatter: function () {
+			        dataLabels : {
+			        enabled    : true,
+			        useHTML    : true,
+			        formatter  : function () {
 			          let index = this.point.index;
-			          return `
-					            ${datasets.datasets[1].data[index]}°C<br>
-							    ${datasets.xData[index]}
-					         `;
+					  
+					  return `
+						      <div style="min-width: 80px; text-align: center; white-space: nowrap;">
+						        ${datasets.datasets[1].data[index]}°C<br>
+						        ${datasets.xData[index]}
+						      </div>
+							 `;
 			        }
 			      },
 			      enableMouseTracking: true
@@ -173,12 +175,11 @@ function getSensor(regionCode) {
 	const sensorList = {
 					     'temp' : {name: '온도'  , unit: '°C'},
 					     'humi' : {name: '습도'  , unit: '%' },
-					     'open' : {name: '개폐량', unit: '%' },
-					     'light': {name: '일조량', unit: 'LX'}
+					     'open' : {name: '개폐량' , unit: '%' },
+					     'light': {name: '일조량' , unit: 'LX'}
 						};
 	
-	// 추후 센서 API 연동 시 해당 소스코드 제거
-	regionCode = '';
+	regionCode = ''; // 추후 센서 API 연동 시 해당 소스코드 제거
 	
 	if(regionCode == '' || regionCode == null || regionCode == undefined) {
 		sensorData = getSensorDummyData();
