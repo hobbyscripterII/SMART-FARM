@@ -135,7 +135,7 @@ function getChart(regionCode) {
 			          let index = this.point.index;
 					  
 					  return `
-						      <div style="min-width: 80px; text-align: center; white-space: nowrap;">
+						      <div style="min-width: 30px; text-align: center; white-space: nowrap;">
 						        ${datasets.datasets[1].data[index]}°C<br>
 						        ${datasets.xData[index]}
 						      </div>
