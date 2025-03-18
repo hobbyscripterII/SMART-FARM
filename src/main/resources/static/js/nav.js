@@ -4,6 +4,7 @@ $(document).ready(function() {
 	changeNavActive();  // 클릭 메뉴 강조 효과
 	subNavClickEvent(); // sub-nav 클릭 시 a 태그 트리거
 	
+	const sensorDataEl  = $('.sensor-data'); // 센서 데이터 초기화
 	const houseListEl   = $('#house-list');
 	const regionCodeMap = JSON.parse(localStorage.getItem('regionCodeMap')); // 로컬 스토리지에 담긴 지역 코드 확인
 	
@@ -45,7 +46,6 @@ $(document).ready(function() {
 				// 차트 표출하는 페이지에 있을 경우에만 차트 정보 변경 이벤트 실행
 				if(currentUrl == targetUrl) {
 					getChart(regionCode);
-					getSensor();
 				}
 		    },
 		    error: (x) => {
@@ -80,7 +80,7 @@ function changeNavActive() {
     });
 }
 
-function chagePlant(el) {
+function changeHouse(el) {
 	localStorage.removeItem('regionCodeMap');
 	
 	const regionCode    = ($(el).val()).trim();
@@ -98,6 +98,5 @@ function chagePlant(el) {
 	// 차트 표출하는 페이지에 있을 경우에만 차트 정보 변경 이벤트 실행
 	if(currentUrl == targetUrl) {
 		getChart(regionCode);
-		getSensor();
 	}
 }

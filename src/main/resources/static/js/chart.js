@@ -1,10 +1,11 @@
 function getChart(regionCode) {
-	const dto   = {"date" : yyyyMMdd(), "regionCode" : regionCode};
-	const title = ($('#house-list').find(':selected').text()).trim();
+	const regionCodeTemp = $('#house-list').val();
+	const timeInterval   = $('#search-date').val();
+	regionCode  		 = regionCode == '' ? regionCodeTemp : regionCode;
+	const dto   		 = {"date" : yyyyMMdd(), "regionCode" : regionCode, "timeInterval" : timeInterval};
+	const title 		 = ($('#house-list').find(':selected').text()).trim();
 	
-	// 센서 데이터 초기화
-	const sensorDataEl = $('.sensor-data');
-	sensorDataEl.html('');
+	console.log('dto = ', dto);
 	
 	$.ajax({
 	    type: 'GET',
@@ -91,7 +92,7 @@ function getChart(regionCode) {
 			    text: title
 			  },
 			  xAxis: {
-			    categories: datasets.xData
+				visible: false
 			  },
 			  yAxis: {
 				min: -10,
@@ -103,11 +104,21 @@ function getChart(regionCode) {
 			  tooltip: {
 			      shared: true,
 			      useHTML: true,
+				  backgroundColor: 'white',
+				  borderColor: '#ccc',
+				  outside: true,
+				  style: {
+				      padding    : '10px',
+				      color      : '#333',
+				      fontSize   : '12px',
+				      fontWeight : 'bold',
+				      boxShadow  : '0px 4px 6px rgba(0, 0, 0, 0.1)'
+				  },
 			      formatter: function () {
 			          let index = this.points[0].point.index;
 					  
 			          return `
-			              <b>${datasets.xData[index]}</b><br>
+			              시간: ${datasets.xData[index]}<br>
 			              상태: ${datasets.datasets[0].data[index]}<br>
 			              온도: ${datasets.datasets[1].data[index]}°C<br>
 			              습도: ${datasets.datasets[4].data[index]}%<br>
@@ -119,8 +130,16 @@ function getChart(regionCode) {
 			  plotOptions: {
 			    spline: {
 			      dataLabels: {
-					enabled: true
-				},
+			        enabled: true,
+			        useHTML: true,
+			        formatter: function () {
+			          let index = this.point.index;
+			          return `
+					            ${datasets.datasets[1].data[index]}°C<br>
+							    ${datasets.xData[index]}
+					         `;
+			        }
+			      },
 			      enableMouseTracking: true
 			    }
 			  },
@@ -141,24 +160,37 @@ function getChart(regionCode) {
 			console.log(x);
 		}
 	});
+	
+	getSensor(regionCode);
 }
 
-function getSensor() {
-	const sensorDataEl    = $('.sensor-data');
-	const sensorDummyData = getSensorDummyData();
-	const sensorList      = {
-							    'temp' : {name: '온도' , unit: '°C'},
-							    'humi' : {name: '습도' , unit: '%' },
-							    'open' : {name: '개폐량', unit: '%' },
-							    'light': {name: '일조량', unit: 'LX'}
-							};
-
-	// onclick="getChart('${eng}')"
+function getSensor(regionCode) {
+	const sensorDataEl = $('.sensor-data');
 	
+	sensorDataEl.html(''); // 센서 데이터 초기화
+	
+	let sensorData   = '';
+	const sensorList = {
+					     'temp' : {name: '온도'  , unit: '°C'},
+					     'humi' : {name: '습도'  , unit: '%' },
+					     'open' : {name: '개폐량', unit: '%' },
+					     'light': {name: '일조량', unit: 'LX'}
+						};
+	
+	// 추후 센서 API 연동 시 해당 소스코드 제거
+	regionCode = '';
+	
+	if(regionCode == '' || regionCode == null || regionCode == undefined) {
+		sensorData = getSensorDummyData();
+	} else {
+		// Ajax 호출 로직
+		// ...
+	}
+
 	Object.entries(sensorList).forEach(([eng, { name, unit }]) => {
 	    const el = `<div>
 	                    <p class="pb">${name}</p>
-	                    <span class="${eng}">${sensorDummyData[eng]}</span><span> ${unit}</span>
+	                    <span class="${eng}">${sensorData[eng]}</span><span> ${unit}</span>
 	                </div>`;
 
 	    sensorDataEl.append(el);
@@ -166,5 +198,5 @@ function getSensor() {
 }
 
 function getSensorDummyData() {
-    return { temp : 0, humi : 0, open : 0, light : 0 };
+    return { temp : 18, humi : 60, open : 20, light : 70 };
 }
