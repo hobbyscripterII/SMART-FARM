@@ -14,18 +14,6 @@ function getChart(regionCode) {
 	    contentType : 'application/json',
 	    success: (data) => {
 			const result 		   = data.data;
-			// const firstTemperature = result[0].temperature;
-			
-			/*
-			if(timeInterval == 'DAY' && firstTemperature == null) {
-				const title = '알림';
-				const text  = '데이터를 로드할 수 없습니다.';
-				const icon  = 'error';
-				
-				sweetAlert(title, text, icon);
-			}
-			*/
-			
 			let datasets           = null;
 			const statusArr        = [];
 			const temperatureArr   = [];

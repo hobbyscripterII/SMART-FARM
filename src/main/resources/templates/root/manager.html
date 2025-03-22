@@ -4,6 +4,10 @@
 	tr {
 		cursor: pointer;
 	}
+	
+	.btn {
+		font-size: 1rem;
+	}
 </style>
 <body>
     <section>
@@ -13,9 +17,9 @@
 		
 		<div class="search-data">
 			<label>매니저명</label>
-			<input type="text" id="manager-name">
+			<input type="text" id="search-manager-name">
 			<label>관리 지역</label>
-			<input type="text" id="region-name">
+			<input type="text" id="search-region-name">
 			
 			<button class="btn small" onclick="search()">검색</button>
 		</div>
@@ -23,14 +27,41 @@
 		<div class="table-wrap">
 			<table>
 				<thead>
-					<th>아이디</th>
-					<th>이름</th>
-					<th>전화번호</th>
-					<th>관리 지역</th>
+					<tr style="cursor: default">
+						<th>아이디</th>
+						<th>이름</th>
+						<th>전화번호</th>
+						<th>관리 지역</th>
+					</tr>
 				</thead>
 			</table>
 		</div>
     </section>
+	
+	<div id="overlay"></div>
+	<div id="modal">
+	    <div class="modal-header">
+	        <span class="modal-title"></span>
+	        <span class="close">&times;</span>
+	    </div>
+	    <div class="modal-body">
+	        <p>아이디</p>
+			<input type="text" id="manager-id" disabled>
+			
+			<p>이름</p>
+			<input type="text" id="manager-name" disabled>
+			
+			<p>전화번호</p>
+			<input type="text" id="manager-tel" disabled>
+			
+			<p>관리 지역명</p>
+			<input type="text" id="manager-region-names" disabled>
+	    </div>
+	    <div class="modal-footer">
+	        <button class="btn btn-close">닫기</button>
+	        <!-- <button class="btn btn-save">저장</button> -->
+	    </div>
+	</div>
 </body>
 
 <script th:src="@{/js/manager.js}"></script>
