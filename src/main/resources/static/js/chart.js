@@ -7,14 +7,14 @@ function getChart(regionCode) {
 	let timeIntervalText = timeInterval == 'DAY' ? '시간' : timeInterval == 'MONTH' ? '일자' : '년도';	
 	
 	$.ajax({
-	    type	    : 'GET',
-	    url		    : window.apiUrl + '/weather',
-	    data	    : dto,
-	    dataType    : 'json',
+	    type : 'GET',
+	    url : window.apiUrl + '/weather',
+	    data : dto,
+	    dataType : 'json',
 	    contentType : 'application/json',
 	    success: (data) => {
 			const result 		   = data.data;
-			const firstTemperature = result[0].temperature;
+			// const firstTemperature = result[0].temperature;
 			
 			/*
 			if(timeInterval == 'DAY' && firstTemperature == null) {

@@ -46,3 +46,31 @@ select {
 	padding: 10px;
 	font-size: 13px;
 }
+
+/* 테이블 */
+table {
+  border: 1px solid #ccc;
+  border-collapse: collapse;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  table-layout: fixed;
+}
+
+tr {
+	background-color: #f8f8f8;
+	border: 1px solid #ddd;
+}
+
+table th, table td {
+	padding: .625em;
+	text-align: center;
+}
+
+table th {
+	text-transform: uppercase;
+}
+
+.table-wrap {
+	padding: 0 10px;	
+}

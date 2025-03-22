@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{fragments/layout-root}" layout:fragment="body">
+<style>
+	tr {
+		cursor: pointer;
+	}
+</style>
+<body>
+    <section>
+		<div id="menu-wrap">
+		    <p id="menu-name">매니저 관리</p>
+		</div>
+		
+		<div class="search-data">
+			<label>매니저명</label>
+			<input type="text" id="manager-name">
+			<label>관리 지역</label>
+			<input type="text" id="region-name">
+			
+			<button class="btn small" onclick="search()">검색</button>
+		</div>
+		
+		<div class="table-wrap">
+			<table>
+				<thead>
+					<th>아이디</th>
+					<th>이름</th>
+					<th>전화번호</th>
+					<th>관리 지역</th>
+				</thead>
+			</table>
+		</div>
+    </section>
+</body>
+
+<script th:src="@{/js/manager.js}"></script>
+</html>

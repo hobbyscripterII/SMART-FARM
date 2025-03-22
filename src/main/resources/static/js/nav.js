@@ -3,10 +3,10 @@ $(document).ready(function() {
 	changeNavActive();  // 클릭 메뉴 강조 효과
 	subNavClickEvent(); // sub-nav 클릭 시 a 태그 트리거
 	
-	const houseListEl = $('#house-list');
+	const houseListEl 		    = $('#house-list');
 	let localStorageRegiconCode = localStorage.getItem('regionCode'); // 로컬 스토리지에 담긴 지역 코드 확인
-	const regionCodes = $('#region-cds').val() || '';
-	const dto = {"regionCodes" : regionCodes};
+	const regionCodes 			= $('#region-cds').val() || '';
+	const dto 					= {"regionCodes" : regionCodes};
 	
 	if(regionCodes != '') {
 		$.ajax({
@@ -15,10 +15,10 @@ $(document).ready(function() {
 		    data : dto,
 		    dataType : 'json',
 		    contentType : 'application/json',
-		    success: (data) => {
-				const result = data.data;
+		    success : (data) => {
+				const result 	    = data.data;
 				const regionCodeMap = new Map();
-				let optionEl = '';
+				let optionEl 		= '';
 				
 				$.each(result, function(idx, item) {
 					const regionCode = item.regionCd;
@@ -40,7 +40,7 @@ $(document).ready(function() {
 					houseListEl.val(houseListEl.find('option:first').val());
 				}
 				
-				regionCode = result[0].regionCd;
+				regionCode       = result[0].regionCd;
 				const currentUrl = window.location.pathname;
 				const targetUrl  = '/manager/home';
 
@@ -67,7 +67,7 @@ function subNavClickEvent() {
 // 클릭 메뉴 강조 효과 이벤트
 function changeNavActive() {
 	const currentPath = window.location.pathname;
-    const subPlantEl = $('.sub-nav');
+    const subPlantEl  = $('.sub-nav');
 	
     subPlantEl.each((idx, el) => {
 		const elHref = $(el).find('a').attr('href');
@@ -87,7 +87,7 @@ function changeHouse(el) {
 	localStorage.setItem('regionCode', regionCode);
 	
 	const currentUrl = window.location.pathname;
-	const targetUrl = '/manager/home';
+	const targetUrl  = '/manager/home';
 	
 	// 차트 표출하는 페이지에 있을 경우에만 차트 정보 변경 이벤트 실행
 	if(currentUrl == targetUrl) {
