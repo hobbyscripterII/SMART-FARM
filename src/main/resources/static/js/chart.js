@@ -2,7 +2,8 @@ function getChart(regionCode) {
 	const regionCodeTemp = $('#house-list').val();
 	const timeInterval   = $('#search-date').val();
 	regionCode  		 = regionCode == '' ? regionCodeTemp : regionCode;
-	const dto   		 = {"date" : yyyyMMdd(), "regionCode" : regionCode, "timeInterval" : timeInterval};
+	const dto   		 = {"date" : '2025-03-19', "regionCode" : '4680036000', "timeInterval" : 'DAY'};
+	// const dto   		 = {"date" : yyyyMMdd(), "regionCode" : regionCode, "timeInterval" : timeInterval};
 	const title 		 = ($('#house-list').find(':selected').text()).trim();
 	let timeIntervalText = timeInterval == 'DAY' ? '시간' : timeInterval == 'MONTH' ? '일자' : '년도';	
 	

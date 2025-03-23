@@ -57,12 +57,19 @@ function modifyForm(id) {
 				const name 		  = result.name || '';
 				const tel  		  = result.tel  || '';
 				const regionNames = (result.regionNames).replaceAll(';', ',').replaceAll('_', ' ') || '';
+				const useYn		  = 'Y';
 				
 				$('.modal-title').text('매니저 상세 조회');
 				$('#manager-id').val(id);
 				$('#manager-name').val(name);
 				$('#manager-tel').val(tel);
 				$('#manager-region-names').val(regionNames);
+				
+				if(useYn == 'Y') {
+					$('#manager-use').prop('checked', true);
+				} else {
+					$('#manager-use').prop('checked', false);
+				}
 
 				$('#overlay, #modal').show();
 			}
@@ -75,8 +82,8 @@ function modifyForm(id) {
 
 function search() {
 	const title = '알림';
-	const text  = '데이터를 로드할 수 없습니다.';
-	const icon  = 'error';
+	const text  = '현재 개발 중인 기능입니다.';
+	const icon  = 'info';
 
 	sweetAlert(title, text, icon);
 }
