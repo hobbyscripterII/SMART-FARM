@@ -180,6 +180,7 @@ function add() {
 
 function modifyForm(id) {
 	$('#save').removeAttr('onclick');
+	$('#id').prop('disabled', true);
 	
 	const dto = {"id" : id};
 	
