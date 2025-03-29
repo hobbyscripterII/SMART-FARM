@@ -28,23 +28,48 @@ select {
 
 .btn {
 	box-sizing: border-box;
-    background: #dbdbdb;
+    background: darkgray;
     color: #fff;
     font-size: 20px;
     padding: 12px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+	margin-right: 5px;
 }
 
 .btn:hover {
-	background-color: #333;
+	background-color: gray;
     transition: background 0.3s ease, transform 0.1s ease;
 }
 
+.btn.green {
+	background: #40bf40;
+}
+
+.btn.green:hover {
+	background: #339933;
+}
+
+.btn.blue {
+	background: #4d94ff;
+}
+
+.btn.blue:hover {
+	background: #0066ff;
+}
+
+.btn.red {
+	background: #ff3333;
+}
+
+.btn.red:hover {
+	background: #e60000;
+}
+
 .btn.small {
-	padding: 10px;
-	font-size: 13px;
+	padding: 10px 18px;
+    font-size: 14px;
 }
 
 /* 테이블 */
@@ -97,9 +122,8 @@ table th {
   width: 100%;
   height: 100%;
   cursor: pointer;
-  background: red;
+  background: #e60000;
   border-radius: 5px;
-  font-weight: bold;
   -webkit-transition: background 0.3s, text-indent 0.3s;
   -moz-transition: background 0.3s, text-indent 0.3s;
   -o-transition: background 0.3s, text-indent 0.3s;
@@ -115,9 +139,9 @@ table th {
   display: block;
   position: absolute;
   top: 0px;
-  left: 7px;
+  left: 3px;
   width: 100%;
-  font-size: 12px;
+  font-size: 14px;
   color: #fff;
   z-index: 1;
 }
@@ -143,7 +167,7 @@ table th {
 }
 
 .onoff input:checked + label {
-  background: #378b2c;
+  background: #339933;
   text-indent: 8px;
 }
 

@@ -21,7 +21,8 @@
 			<label>관리 지역</label>
 			<input type="text" id="search-region-name">
 			
-			<button class="btn small" onclick="search()">검색</button>
+			<button class="btn small" onclick="search()" style="margin-right: 0px">검색</button>
+			<button class="btn small green" onclick="addForm()">등록</button>
 		</div>
 		
 		<div class="table-wrap">
@@ -32,8 +33,11 @@
 						<th>이름</th>
 						<th>전화번호</th>
 						<th>관리 지역</th>
+						<th>사용 여부</th>
 					</tr>
 				</thead>
+				<tbody>
+				</tbody>
 			</table>
 		</div>
     </section>
@@ -45,27 +49,36 @@
 	        <span class="close">&times;</span>
 	    </div>
 	    <div class="modal-body">
-	        <p>아이디</p>
-			<input type="text" id="manager-id" disabled>
-			
-			<p>이름</p>
-			<input type="text" id="manager-name" disabled>
-			
-			<p>전화번호</p>
-			<input type="text" id="manager-tel" disabled>
-			
-			<p>관리 지역명</p>
-			<input type="text" id="manager-region-names" disabled>
-			
-			<p>사용 여부</p>
-			<p class="onoff">
-				<input type="checkbox" value="1" id="manager-use">
-				<label for="manager-use"></label>
-			</p>
+			<form id="form">
+		        <p>아이디</p>
+				<input type="text" id="id" name="id" disabled>
+				
+				<p>
+					<span>패스워드</span>
+					<label class="alert-text"></label>
+				</p>
+				<input type="password" id="pwd" name="pwd">
+				
+				<p>이름</p>
+				<input type="text" id="name" name="name">
+				
+				<p>전화번호</p>
+				<input type="text" id="tel" name="tel">
+				
+				<p>관리 지역명</p>
+				<select id="region-cd" name="region-cd">
+				</select>
+				
+				<p>사용 여부</p>
+				<p class="onoff">
+					<input type="checkbox" id="useYn" name="useYn">
+					<label for="useYn"></label>
+				</p>
+			</form>
 	    </div>
 	    <div class="modal-footer">
-	        <button class="btn btn-close">닫기</button>
-	        <!-- <button class="btn btn-save">저장</button> -->
+	        <button class="btn small green btn-save" id="save">저장</button>
+	        <button class="btn small btn-close">닫기</button>
 	    </div>
 	</div>
 </body>
