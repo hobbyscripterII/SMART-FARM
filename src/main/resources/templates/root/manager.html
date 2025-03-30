@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{fragments/layout-root}" layout:fragment="body">
 <style>
-	tr {
-		cursor: pointer;
-	}
-	
-	.btn {
-		font-size: 1rem;
-	}
+	tr {cursor: pointer;}
+	th {text-align: center;}
+	.btn {font-size: 1rem;}
+	th:first-child {width: 15%;}
+	th:nth-child(2), td:nth-child(2) {width: 15%;}
+	th:nth-child(3), td:nth-child(3) {width: 20%;}
+	th:nth-child(4), td:nth-child(4) {width: 20%;}
+	th:nth-child(5), td:nth-child(5) {width: 10%;}
 </style>
 <body>
     <section>
@@ -16,13 +17,18 @@
 		</div>
 		
 		<div class="search-data">
-			<label>매니저명</label>
-			<input type="text" id="search-manager-name">
-			<label>관리 지역</label>
-			<input type="text" id="search-region-name">
-			
-			<button class="btn small" onclick="search()" style="margin-right: 0px">검색</button>
-			<button class="btn small green" onclick="addForm()">등록</button>
+			<div>
+				<label>매니저명</label>
+				<input type="text" id="search-manager-name">
+			</div>
+			<div>
+				<label>관리 지역</label>
+				<input type="text" id="search-region-name">
+			</div>
+			<div>
+				<button class="btn small" onclick="search()" style="margin-right: 0px">검색</button>
+				<button class="btn small green" onclick="addForm()">등록</button>
+			</div>
 		</div>
 		
 		<div class="table-wrap">
@@ -63,7 +69,7 @@
 				<input type="text" id="name" name="name">
 				
 				<p>전화번호</p>
-				<input type="text" id="tel" name="tel">
+				<input type="text" id="tel" name="tel" data-phone-number-chk>
 				
 				<p>관리 지역명</p>
 				<select id="region-cd" name="region-cd">

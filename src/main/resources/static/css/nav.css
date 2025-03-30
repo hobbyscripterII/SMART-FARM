@@ -18,6 +18,24 @@ nav ul li {
     padding: 20px 10px;
 }
 
+.toggle-wrap {
+	padding: 5px 10px;
+    justify-content: right;
+    align-items: center;
+	display: none;
+}
+
+.toggle-wrap > p {
+	font-size: 11px;
+    color: gray;
+    margin-right: 5px;
+}
+
+#toggle {
+	cursor: pointer;
+	/* padding: 3px; */
+}
+
 .main-nav {
     display: flex;
     align-items: center;

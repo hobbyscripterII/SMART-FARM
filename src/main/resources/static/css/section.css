@@ -182,6 +182,8 @@ section {
 
 .search-data {
 	padding: 0 10px;
+	display: flex;
+	align-items: center;
 }
 
 .search-data input {
@@ -191,4 +193,12 @@ section {
     padding: 10px;
     margin: 10px 0;
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.search-data div {
+	margin-right: 5px;
+}
+
+.search-data div button {
+	margin-bottom: 5px;
 }

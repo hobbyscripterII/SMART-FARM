@@ -34,7 +34,7 @@ function search() {
 					const useYn		  = item.useYn == 'Y' ? '사용' : '미사용';
 					const useYnColor  = useYn == '사용' ? 'blue' : 'red';
 					const regionName  = (item.regionName).replaceAll(';', ',').replaceAll('_', ' ') || '';
-					const el 		  = `<tr ondblclick="modifyForm('${id}')">
+					const el 		  = `<tr onclick="modifyForm('${id}')">
 											<td>${id}</td>
 											<td>${name}</td>
 											<td>${tel}</td>
