@@ -1,4 +1,4 @@
-@media (max-width:768px) {
+@media (max-width: 826px) {
 	.profile-wrap {
 		display: none;
 	}
@@ -33,6 +33,7 @@
 	
 	.sub-nav {
 	    padding: 4px 20px;
+	    margin: 5px 0;
 	}
 	
 	nav ul li {
@@ -155,11 +156,19 @@
 		font-size: 12px;
 	}
 	
+	.main-nav {
+		margin: 5px 0;
+	}
+	
 	.main-nav img {
 		width: 16px;
 	}
 	
 	nav ul li, nav li a {
 		font-size: 12px;
+	}
+	
+	.search-data input, .search-data button {
+		margin: 2px 0;
 	}
 }

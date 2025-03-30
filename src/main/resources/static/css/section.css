@@ -186,19 +186,18 @@ section {
 	align-items: center;
 }
 
-.search-data input {
+.search-data input, .search-data button {
 	box-sizing: border-box;
-    border: 1px solid #ddd;
-    border-radius: 5px;
     padding: 10px;
     margin: 10px 0;
+}
+
+.search-data input {
+    border: 1px solid #ddd;
+    border-radius: 5px;
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .search-data div {
 	margin-right: 5px;
-}
-
-.search-data div button {
-	margin-bottom: 5px;
 }
