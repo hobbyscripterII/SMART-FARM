@@ -8,6 +8,27 @@
 	.btn {
 		font-size: 1rem;
 	}
+	
+	.row-container {
+		display: flex;
+	}
+	
+	.row-group {
+		width: 50%;
+	}
+	
+	.row-group select {
+		width: 100%;
+	}
+	
+	.hight-line {
+		border-right: 1px solid #dbdbdb;
+	    margin: 0 10px;
+	}
+	
+	#modal {
+		width: 600px;
+	}
 </style>
 <body>
     <section>
@@ -17,13 +38,15 @@
 		
 		<div class="search-data">
 			<div>
-				<label>매니저명</label>
+				<label>하우스명</label>
 				<input type="text" id="search-manager-name">
 			</div>
+			<!--
 			<div>
 				<label>관리 지역</label>
 				<input type="text" id="search-region-name">
 			</div>
+			-->
 			<div>
 				<button class="btn small" onclick="search()">검색</button>
 				<button class="btn small green" onclick="addForm()">등록</button>
@@ -43,5 +66,88 @@
 			</table>
 		</div>
     </section>
+	
+	<div id="overlay"></div>
+		<div id="modal">
+		    <div class="modal-header">
+		        <span class="modal-title"></span>
+		        <span class="close">&times;</span>
+		    </div>
+		    <div class="modal-body">
+				<form id="form">
+					<div class="row-container">
+						<div class="row-group">
+					        <p>속성명</p>
+							<input type="text" autocomplete="off">
+							
+							<p><span>속성명</span><label class="alert-text"></label></p>
+							<input type="text" autocomplete="off">
+							
+							<p>속성명</p>
+							<input type="text" autocomplete="off">
+							
+							<p>속성명</p>
+							<input type="text" autocomplete="off" data-phone-number-chk>
+							
+							<p>속성명</p>
+							<select id="region-cd" autocomplete="off">
+								<option>옵션</option>
+								<option>옵션</option>
+								<option>옵션</option>
+								<option>옵션</option>
+								<option>옵션</option>
+							</select>
+							
+							<!--
+							<p>사용 여부</p>
+							<p class="onoff">
+								<input type="checkbox" id="useYn" name="useYn">
+								<label for="useYn"></label>
+							</p>
+							-->
+						</div>
+						
+						<div class="hight-line"></div>
+						
+						<div class="row-group">
+						    <p>속성명</p>
+							<input type="text" autocomplete="off">
+							
+							<p><span>속성명</span><label class="alert-text"></label></p>
+							<input type="text" autocomplete="off">
+							
+							<p>속성명</p>
+							<input type="text" autocomplete="off">
+							
+							<p>속성명</p>
+							<input type="text" data-phone-number-chk autocomplete="off">
+							
+							<p>속성명</p>
+							<select id="region-cd" autocomplete="off">
+								<option>옵션</option>
+								<option>옵션</option>
+								<option>옵션</option>
+								<option>옵션</option>
+								<option>옵션</option>
+							</select>
+							
+							<!--
+							<p>사용 여부</p>
+							<p class="onoff">
+								<input type="checkbox" id="useYn" name="useYn">
+								<label for="useYn"></label>
+							</p>
+							-->
+						</div>
+					</div>
+				</form>
+		    </div>
+		    <div class="modal-footer">
+		        <button class="btn small green btn-save" id="save">저장</button>
+		        <button class="btn small btn-close">닫기</button>
+		    </div>
+		</div>
 </body>
+
+<script th:src="@{/js/house.js}"></script>
 </html>
