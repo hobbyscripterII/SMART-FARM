@@ -1,174 +1,42 @@
 @media (max-width: 826px) {
-	.profile-wrap {
-		display: none;
-	}
-	
-	header {
-		border-bottom: 0px;
-		display: flex;
-		align-items: center;
-	}
-	
-	header span {
-	    font-size: 20px;
-	}
-	
-	header > button {
-		margin-right: 0 !important;
-	}
-	
-	section {
-		flex: auto;
-	}
-	
-	nav {
-		width: 100%;
-		border-right: 0px;
-	}
-	
-	.navbar-wrap {
-		padding: 0px 10px;
-		border-bottom: 1px solid #dbdbdb;
-	}
-	
-	.sub-nav {
-	    padding: 4px 20px;
-	    margin: 5px 0;
-	}
-	
-	nav ul li {
-	    margin-bottom: 0px;
-	}
-	
-	#home-wrap {
-		display: none;
-	}
-	
-	#control-wrap button {
-	    font-size: 20px;
-		min-width: 100%;
-	}
-	
-	.mobile-hide {
-		display: none;
-	}
-	
-	#menu-wrap {
-		display: none;
-	}
-	
-	.search-data {
-		margin: 5px 10px;
-	}
-	
-	.search-data input {
-		width: 100px;
-		padding: 5px;
-	    margin: 5px 0;
-	}
-	
-	.search-data label {
-		font-size: 12px;
-	}
-	
-	.search-data div button {
-		width: 100%;
-	}
-	
-	.btn.small {
-		font-size: 13px;
-        padding: 7px 15px;
-		border-radius: 3px;
-	}
-	
-	table {
-		font-size: 10px;
-	}
-	
-	#modal {
-		width: 90%;
-	}
-	
-	#modal input {
-		font-size: 11px;
-		margin: 5px 0;
-	}
-	
-	#modal select {
-		font-size: 12px;
-	}
-	
-	.modal-header {
-		font-size: 15px;
-	}
-	
-	.modal-body {
-		padding: 10px;
-	}
-	
-	.modal-footer {
-		padding: 10px;
-	}
-	
-	.onoff label:after {
-		font-size: 12px;
-	}
-	
-	.alert-text {
-		font-size: 10px;
-	}
-	
-	#form p {
-		font-size: 13px;
-	}
-	
-	#weather-wrap {
-		display: none;
-	}
-	
-	#contents-wrap {
-		margin: 10px;
-	}
-	
-	.sensor-data div {
-		padding: 10px;
-	}
-	
-	.sensor-data p {
-		font-size: 12px;
-	}
-	
-	.sensor-data span {
-		font-size: 15px;
-	}
-	
-	/* 토글 */
-	.toggle-wrap {
-		display: flex;
-	}
-	
-	#search-date {
-		font-size: 12px;
-	    padding: 5px 10px;
-	}
-	
-	.search-date-wrap {
-		font-size: 12px;
-	}
-	
-	.main-nav {
-		margin: 5px 0;
-	}
-	
-	.main-nav img {
-		width: 16px;
-	}
-	
-	nav ul li, nav li a {
-		font-size: 12px;
-	}
-	
-	.search-data input, .search-data button {
-		margin: 2px 0;
-	}
+	.profile-wrap {display: none;}
+	header {border-bottom: 0px;display: flex;align-items: center;}
+	header span {font-size: 20px;}
+	header > button {margin-right: 0 !important;}
+	section {flex: auto;}
+	nav {width: 100%;border-right: 0px;}
+	.navbar-wrap {padding: 0px 10px;border-bottom: 1px solid #dbdbdb;}
+	.sub-nav {padding: 4px 20px;margin: 5px 0;}
+	nav ul li {margin-bottom: 0px;}
+	#home-wrap {display: none;}
+	#control-wrap button {font-size: 20px;min-width: 100%;}
+	.mobile-hide {display: none;}
+	#menu-wrap {display: none;}
+	.search-data {margin: 5px 10px;}
+	.search-data input {width: 100px;padding: 5px;margin: 5px 0;}
+	.search-data label {font-size: 12px;}
+	.search-data div button {width: 100%;}
+	.btn.small {font-size: 13px;padding: 7px 15px;border-radius: 3px;}
+	table {font-size: 10px;}
+	#modal {width: 90%;}
+	#modal input {font-size: 11px;margin: 5px 0;}
+	#modal select {font-size: 12px;}
+	.modal-header {font-size: 15px;}
+	.modal-body {padding: 10px;}
+	.modal-footer {padding: 10px;}
+	.onoff label:after {font-size: 12px;}
+	.alert-text {font-size: 10px;}
+	#form p {font-size: 13px;}
+	#weather-wrap {display: none;}
+	#contents-wrap {margin: 10px;}
+	.sensor-data div {padding: 10px;}
+	.sensor-data p {font-size: 12px;}
+	.sensor-data span {font-size: 15px;}
+	/* 토글 */ .toggle-wrap {display: flex;}
+	#search-date {font-size: 12px;padding: 5px 10px;}
+	.search-date-wrap {font-size: 12px;}
+	.main-nav {margin: 5px 0;}
+	.main-nav img {width: 16px;}
+	nav ul li, nav li a {font-size: 12px;}
+	.search-data input, .search-data button {margin: 2px 0;}
 }

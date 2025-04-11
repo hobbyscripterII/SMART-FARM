@@ -4,6 +4,7 @@ ul, li {list-style: none;}
 a, a:hover {color: #333;text-decoration: none;}
 select {padding: 8px 14px;border: 1px solid #dbdbdb;border-radius: 5px;}
 p {margin: 0;}
+p label {margin: 0;}
 table th, table td {padding: .625em;text-align: center;}
 table th {text-transform: uppercase;}
 .table-wrap {padding: 0 10px;}

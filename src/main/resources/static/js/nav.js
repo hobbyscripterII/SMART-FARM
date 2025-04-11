@@ -1,6 +1,6 @@
 $(document).ready(function() {
 	let regionCode = null;
-	changeNavActive();  // 클릭 메뉴 강조 효과
+	// changeNavActive();  // 클릭 메뉴 강조 효과(미사용)
 	subNavClickEvent(); // sub-nav 클릭 시 a 태그 트리거
 	
 	const toggle				= $('#toggle');
@@ -79,6 +79,7 @@ function subNavClickEvent() {
 }
 
 // 클릭 메뉴 강조 효과 이벤트
+/*
 function changeNavActive() {
 	const currentPath = window.location.pathname;
     const subPlantEl  = $('.sub-nav');
@@ -94,6 +95,7 @@ function changeNavActive() {
         }
     });
 }
+*/
 
 function changeHouse(el) {
 	const regionCode = ($(el).val()).trim();
