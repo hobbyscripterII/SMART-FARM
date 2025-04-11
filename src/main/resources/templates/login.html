@@ -2,7 +2,8 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{fragments/layout-login}" layout:fragment="body">
 <style>
 	body {
-		background: url('/img/img-background.jpg') no-repeat center center fixed;
+		/* background: url('/img/img-background.jpg') no-repeat center center fixed; */
+		background-color: #000;
 	    background-size: cover;
 	    margin: 0;
 	    height: 100vh;
@@ -15,9 +16,9 @@
 			<h1>SMART FARM</h1>
 			
 			<form id="login-form">
-				<input type="text" id="id" name="id" placeholder="ID">
-				<input type="password" id="pwd" name="pwd" placeholder="PASSWORD">
-				<button type="button" onclick="login()">LOGIN</button>
+				<input type="text" class="form-control" id="id" name="id" placeholder="ID">
+				<input type="password" class="form-control" id="pwd" name="pwd" placeholder="PASSWORD">
+				<button type="button" class="btn btn-success" onclick="login()">LOGIN</button>
 			</form>
 		</div>
     </section>

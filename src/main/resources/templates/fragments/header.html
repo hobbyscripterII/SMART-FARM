@@ -1,24 +1,30 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security" th:fragment="header">
 	<header>
-	    <span>
+	    <span class="header-left">
 			<a sec:authorize="hasRole('ROLE_ROOT')" th:href="@{/root/home}">
-	            <span>🥬</span>
-	            <span>SMART FARM</span>
+	            <span id="header-title">SMART FARM</span>
 	        </a>
 			
 			<a sec:authorize="hasRole('ROLE_MANAGER')" th:href="@{/manager/home}">
-			    <span>🥬</span>
-			    <span>SMART FARM</span>
+			    <span id="header-title">SMART FARM</span>
 			</a>
 			
 			<a sec:authorize="hasRole('ROLE_GUEST')" th:href="@{/guest/home}">
-			    <span>🥬</span>
-			    <span>SMART FARM</span>
+			    <span id="header-title">SMART FARM</span>
 			</a>
 	    </span>
 		
-		<button class="btn small" onclick="logout()">로그아웃</button>
+		<div class="header-right">
+			<!-- 프로필 사진 -->
+			<div class="profile-wrap">
+			    <!-- <img class="profile-photo" src="https://i.pinimg.com/736x/e1/f2/e5/e1f2e545fc22897187e1e171a41e3234.jpg"> -->
+			    <img class="profile-photo" th:src="@{/img/img-noprofile.png}">
+			    <p><span id="username" th:text="${#authentication.principal.name}"></span>님, 안녕하세요!</p>
+			</div>
+			
+			<button class="btn btn-light" onclick="logout()">로그아웃</button>
+		</div>
 	</header>
 	
 	<script>

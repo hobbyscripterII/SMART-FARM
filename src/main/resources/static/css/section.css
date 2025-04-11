@@ -1,9 +1,4 @@
-@font-face {
-    font-family: 'Freesentation-9Black';
-    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2404@1.0/Freesentation-9Black.woff2') format('woff2');
-    font-weight: 900;
-    font-style: normal;
-}
+@import url('//fonts.googleapis.com/earlyaccess/notosanskr.css');
 
 section {
     flex: 1;
@@ -140,35 +135,14 @@ section {
 #login-form input {
 	box-sizing: border-box;
     width: 100%;
-    border: 1px solid #ddd;
     border-radius: 5px;
-    font-size: 18px;
-    padding: 10px;
     margin-bottom: 10px;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-#login-form input:focus {
-    border-color: #28a745;
-    box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
-    outline: none;
 }
 
 #login-form button {
 	box-sizing: border-box;
-    width: 100%;
-    background: #75d167;
-    color: #fff;
-    font-size: 20px;
-    padding: 12px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-#login-form button:hover {
-	background-color: #28a745;
-    transition: background 0.3s ease, transform 0.1s ease;
+	width: 100%;
+	padding: 12px;
 }
 
 /* 예외 페이지 */

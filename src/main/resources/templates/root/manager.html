@@ -12,9 +12,11 @@
 </style>
 <body>
     <section>
+		<!--
 		<div id="menu-wrap">
 		    <p id="menu-name">매니저 관리</p>
 		</div>
+		-->
 		
 		<div class="search-data">
 			<div>
@@ -26,13 +28,13 @@
 				<input type="text" id="search-region-name">
 			</div>
 			<div>
-				<button class="btn small" onclick="search()" style="margin-right: 0px">검색</button>
-				<button class="btn small green" onclick="addForm()">등록</button>
+				<button class="btn btn-primary" onclick="search()" style="margin-right: 0px">검색</button>
+				<button class="btn btn-success" onclick="addForm()">등록</button>
 			</div>
 		</div>
 		
 		<div class="table-wrap">
-			<table>
+			<table class="table table-hover">
 				<thead>
 					<tr style="cursor: default">
 						<th>아이디</th>
@@ -57,31 +59,31 @@
 	    <div class="modal-body">
 			<form id="form">
 		        <p>아이디</p>
-				<input type="text" id="id" name="id" autocomplete="off">
+				<input type="text" class="form-control" id="id" name="id" autocomplete="off">
 				
 				<p><span>패스워드</span><label class="alert-text"></label></p>
-				<input type="password" id="pwd" name="pwd" autocomplete="off">
+				<input type="password" class="form-control" id="pwd" name="pwd" autocomplete="off">
 				
 				<p>이름</p>
-				<input type="text" id="name" name="name" autocomplete="off">
+				<input type="text" class="form-control" id="name" name="name" autocomplete="off">
 				
 				<p>전화번호</p>
-				<input type="text" id="tel" name="tel" data-phone-number-chk autocomplete="off">
+				<input type="text" class="form-control" id="tel" name="tel" data-phone-number-chk autocomplete="off">
 				
 				<p>관리 지역명</p>
-				<select id="region-cd" name="region-cd" autocomplete="off">
+				<select class="form-select" id="region-cd" name="region-cd" autocomplete="off">
 				</select>
 				
 				<p>사용 여부</p>
 				<p class="onoff">
-					<input type="checkbox" id="useYn" name="useYn">
+					<input type="checkbox" class="form-check-input" id="useYn" name="useYn">
 					<label for="useYn"></label>
 				</p>
 			</form>
 	    </div>
 	    <div class="modal-footer">
-	        <button class="btn small green btn-save" id="save">저장</button>
-	        <button class="btn small btn-close">닫기</button>
+	        <button class="btn btn-primary btn-save" id="save">저장</button>
+	        <button class="btn btn-secondary btn-close">닫기</button>
 	    </div>
 	</div>
 </body>

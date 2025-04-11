@@ -32,9 +32,11 @@
 </style>
 <body>
     <section>
+		<!--
 		<div id="menu-wrap">
 		    <p id="menu-name">하우스 관리</p>
 		</div>
+		-->
 		
 		<div class="search-data">
 			<div>
@@ -48,13 +50,13 @@
 			</div>
 			-->
 			<div>
-				<button class="btn small" onclick="search()">검색</button>
-				<button class="btn small green" onclick="addForm()">등록</button>
+				<button class="btn btn-primary" onclick="search()">검색</button>
+				<button class="btn btn-success" onclick="addForm()">등록</button>
 			</div>
 		</div>
 		
 		<div class="table-wrap">
-			<table>
+			<table class="table table-hover">
 				<thead>
 					<tr style="cursor: default">
 						<th>아이디</th>
@@ -143,8 +145,8 @@
 				</form>
 		    </div>
 		    <div class="modal-footer">
-		        <button class="btn small green btn-save" id="save">저장</button>
-		        <button class="btn small btn-close">닫기</button>
+				<button class="btn btn-primary btn-save" id="save">저장</button>
+				<button class="btn btn-secondary btn-close">닫기</button>
 		    </div>
 		</div>
 </body>
