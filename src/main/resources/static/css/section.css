@@ -23,6 +23,7 @@ section {flex: 1;min-width: 0;min-height: 95vh;}
 /* 예외 페이지 */
 .exception-form-wrap h1 {font-size: 40px;color: #333;width: 100vw;padding-bottom: 15px;}
 .search-data {padding: 0 10px;display: flex;align-items: center;}
-.search-data input, .search-data button {box-sizing: border-box;padding: 10px;margin: 10px 0;}
+.search-data input, .search-data button {box-sizing: border-box;margin: 10px 5px;}
 .search-data input {border: 1px solid #ddd;border-radius: 5px;transition: border-color 0.3s ease, box-shadow 0.3s ease;}
-.search-data div {margin-right: 5px;}
+.search-data div {margin-right: 5px;display: flex;align-items: center;}
+.search-data div input {width: auto;}

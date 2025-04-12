@@ -1,47 +1,20 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{fragments/layout-root}" layout:fragment="body">
 <style>
-	tr {
-		cursor: pointer;
-	}
-	
-	.btn {
-		font-size: 1rem;
-	}
-	
-	.row-container {
-		display: flex;
-	}
-	
-	.row-group {
-		width: 50%;
-	}
-	
-	.row-group select {
-		width: 100%;
-	}
-	
-	.hight-line {
-		border-right: 1px solid #dbdbdb;
-	    margin: 0 10px;
-	}
-	
-	#modal {
-		width: 600px;
-	}
+	tr {cursor: pointer;}
+	.btn {font-size: 1rem;}
+	.row-container {display: flex;}
+	.row-group {width: 50%;}
+	.row-group select {width: 100%;}
+	.hight-line {border-right: 1px solid #dbdbdb;margin: 0 10px;}
+	#modal {width: 600px;}
 </style>
 <body>
     <section>
-		<!--
-		<div id="menu-wrap">
-		    <p id="menu-name">하우스 관리</p>
-		</div>
-		-->
-		
 		<div class="search-data">
 			<div>
 				<label>하우스명</label>
-				<input type="text" id="search-manager-name">
+				<input type="text" class="form-control" id="search-manager-name">
 			</div>
 			<!--
 			<div>
@@ -50,8 +23,8 @@
 			</div>
 			-->
 			<div>
-				<button class="btn btn-primary" onclick="search()">검색</button>
-				<button class="btn btn-success" onclick="addForm()">등록</button>
+				<button class="btn btn-sm btn-primary" onclick="search()">검색</button>
+				<button class="btn btn-sm btn-success" onclick="addForm()">등록</button>
 			</div>
 		</div>
 		
@@ -145,8 +118,8 @@
 				</form>
 		    </div>
 		    <div class="modal-footer">
-				<button class="btn btn-primary btn-save" id="save">저장</button>
-				<button class="btn btn-secondary btn-close">닫기</button>
+				<button class="btn btn-sm btn-primary btn-save" id="save">저장</button>
+				<button class="btn btn-sm btn-secondary btn-close">닫기</button>
 		    </div>
 		</div>
 </body>

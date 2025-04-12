@@ -4,8 +4,6 @@
 		<input type="hidden" id="api-url" th:value="${@environment.getProperty('api.url')}" />
 		<input type="hidden" id="region-cds" th:value="${#authentication.principal.regionCodes}" />
 
-		<!-- regionList -->
-		
 	    <div class="line"></div>
 		
 		<ul class="toggle-wrap">
@@ -14,27 +12,12 @@
 		</ul>
 		
 	    <ul class="navbar-wrap">
-			<!-- <li class="main-nav"><img src="https://img.icons8.com/?size=20&id=88608&format=png"><span>하우스 관리</span></li> -->
 			<ul class="menu">
 				<li class="main-nav">
-					<span>메인 메뉴</span>
-					<ul class="sub-nav">
-						<li><a th:href="@{/root/house}">하우스 관리</a></li>
-						<li><a href="#">서브 메뉴</a></li>
-						<li><a href="#">서브 메뉴</a></li>
-						<li><a href="#">서브 메뉴</a></li>
-						<li><a href="#">서브 메뉴</a></li>
-					</ul>
+					<span><a th:href="@{/root/house}">하우스 관리</a></span>
 				</li>
 				<li class="main-nav">
-					<span>메인 메뉴</span>
-					<ul class="sub-nav">
-						<li><a th:href="@{/root/manager}">매니저 관리</a></li>
-						<li><a href="#">서브 메뉴</a></li>
-						<li><a href="#">서브 메뉴</a></li>
-						<li><a href="#">서브 메뉴</a></li>
-						<li><a href="#">서브 메뉴</a></li>
-					</ul>
+					<span><a th:href="@{/root/manager}">매니저 관리</a></span>
 				</li>
 			</ul>
 	    </ul>

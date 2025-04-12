@@ -1,20 +1,26 @@
 @media (max-width: 826px) {
 	.profile-wrap {display: none;}
 	header {border-bottom: 0px;display: flex;align-items: center;}
-	header span {font-size: 20px;}
+	#header-title {font-size: 21px;}
 	header > button {margin-right: 0 !important;}
 	section {flex: auto;}
 	nav {width: 100%;border-right: 0px;}
-	.navbar-wrap {padding: 0px 10px;border-bottom: 1px solid #dbdbdb;}
-	.sub-nav {padding: 4px 20px;margin: 5px 0;}
+	nav ul li, nav li a {font-size: 12px;}
 	nav ul li {margin-bottom: 0px;}
+	.menu {display: block;}
+	.navbar-wrap {padding: 0px 10px;border-bottom: 1px solid #dbdbdb;}
+	.main-nav {margin: 5px 0;}
+	.main-nav img {width: 16px;}
+	.main-nav span {justify-content: left;font-weight: bold;}
+	.sub-nav {margin: 5px 0;display: block;}
+	.sub-nav li a {justify-content: left;}
 	#home-wrap {display: none;}
 	#control-wrap button {font-size: 20px;min-width: 100%;}
 	.mobile-hide {display: none;}
 	#menu-wrap {display: none;}
-	.search-data {margin: 5px 10px;}
+	.search-data {margin: 5px 10px;display: block;}
 	.search-data input {width: 100px;padding: 5px;margin: 5px 0;}
-	.search-data label {font-size: 12px;}
+	.search-data label {font-size: 12px;width: 85px;}
 	.search-data div button {width: 100%;}
 	.btn.small {font-size: 13px;padding: 7px 15px;border-radius: 3px;}
 	table {font-size: 10px;}
@@ -35,8 +41,6 @@
 	/* 토글 */ .toggle-wrap {display: flex;}
 	#search-date {font-size: 12px;padding: 5px 10px;}
 	.search-date-wrap {font-size: 12px;}
-	.main-nav {margin: 5px 0;}
-	.main-nav img {width: 16px;}
-	nav ul li, nav li a {font-size: 12px;}
 	.search-data input, .search-data button {margin: 2px 0;}
+	.table th, .table td {padding: 0;}
 }

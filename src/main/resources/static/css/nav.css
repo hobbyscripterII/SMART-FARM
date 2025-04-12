@@ -1,12 +1,12 @@
 nav {height: auto;background: #fff;border-right: 1px solid #dbdbdb;}
-nav ul li, nav li a {color: #333;}
+nav ul li, nav li a {color: #333;padding: 3px 0;}
 .navbar-wrap {display: flex;justify-content: center;padding: 10px 0;margin: 0;border-bottom: 1px solid #dbdbdb;}
 .toggle-wrap {padding: 5px 10px;justify-content: right;align-items: center;display: none;}
 .toggle-wrap > p {font-size: 11px;color: gray;margin-right: 5px;}
 #toggle {cursor: pointer;}
 .menu {display: flex;}
-.main-nav {position: relative;width: 200px;display: flex;justify-content: center;flex-wrap: wrap;}
-.main-nav span {display: flex;justify-content: center;cursor: pointer;width: 100%;}
+.main-nav {position: relative;width: 250px;display: flex;justify-content: center;flex-wrap: wrap;}
+.main-nav span {display: flex;justify-content: center;cursor: pointer;width: 100%;margin: 3px 0;}
 .navbar-wrap:hover .sub-nav, .main-nav:hover .sub-nav {display: block;}
 .span-logout {cursor: pointer;width: 100%;padding: 5px 0px;color: red;font-weight: bold;}
 .sub-nav {display:none;cursor: pointer;width: 100%;}
