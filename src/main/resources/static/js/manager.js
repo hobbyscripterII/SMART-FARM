@@ -206,7 +206,7 @@ function modifyForm(id) {
 				const tel  		     = result.tel   || '';
 				const useYn		     = result.useYn || '';
 				const regionCode     = result.regionCode;
-				const regionName     = (result.regionName).replaceAll('_', ' ') || '';
+				const regionName     = result.reginName != null ? (result.regionName).replaceAll('_', ' ') : '';
 				const rootRegionInfo = result.rootRegionInfo;
 				let regionList       = `<option value="${regionCode}">${regionName}</opion>`;
 				

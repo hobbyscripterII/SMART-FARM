@@ -1,7 +1,79 @@
 header {box-sizing: border-box;width: 100%;padding: 15px;display: flex;justify-content: space-between;background-color: #000;}
 #header-title {font-size: 25px;font-weight: bold;color: #fff;}
-/* 프로필 사진 */ .profile-wrap {display: flex;align-items: center;margin-right: 10px;}
-.profile-wrap span, .profile-wrap p {display: flex;align-items: center;color: #fff;font-size: 14px;}
+.profile-wrap {display: flex;align-items: center;margin-right: 10px;}
+.profile-wrap span, .profile-wrap p {display: flex;align-items: center;font-size: 14px;}
 .profile-photo {width: 40px;height: 40px;max-width: 40px;max-height: 40px;object-fit: cover;border-radius: 50%;margin-right: 5px;}
 .header-left {width: 50%;display: flex;justify-content: start;}
 .header-right {width: 50%;display: flex;justify-content: end;}
+
+/* HEADER 상단 바 */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    height: 60px;
+    background-color: #fff;
+    border-bottom: 1px solid #dee2e6;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
+}
+
+.header-left a {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #212529;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.profile-wrap {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    background-color: #f8f9fa;
+    padding: 0.4rem 1rem;
+    border-radius: 50px;
+    border: 1px solid #dee2e6;
+}
+
+.profile-photo {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid #dee2e6;
+}
+
+#username {
+    font-weight: 500;
+    color: #495057;
+}
+
+:root {
+    --smartfarm-green: #6cc24a;
+    --smartfarm-green-light: #eaffea;
+}
+
+#header-title {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--smartfarm-green);
+    letter-spacing: 1px;
+    padding: 0.25rem 0.75rem;
+    border-radius: 0.375rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.2s ease, color 0.2s ease;
+    white-space: nowrap;
+}
+
+#header-title:hover {
+    background-color: var(--smartfarm-green-light);
+    color: #58a739;
+}
